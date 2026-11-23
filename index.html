@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#1e2430" />
+  <title>BALANCIN UNT</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="icon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-container">
+    <!-- CABECERA: Título + Estado BT + 2 Botones de Display -->
+    <header class="top-bar">
+      <div class="brand">
+        <h1>BALANCIN UNT</h1>
+        <div class="bt-controls">
+          <button id="btnBt" class="btn-bt">Conectar BT</button>
+          <button id="btnDemo" class="btn-demo" title="Simular datos sin robot">Demo</button>
+        </div>
+      </div>
+
+      <div class="display-selectors">
+        <!-- Botón 1: Gráficas respecto al tiempo -->
+        <button id="btnViewGraph" class="btn-selector" aria-label="Ver Gráficas" title="Gráficas (Posición - Ángulo - Voltaje)">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <polyline points="3 17 9 11 13 15 21 7"></polyline>
+            <polyline points="17 7 21 7 21 11"></polyline>
+          </svg>
+        </button>
+
+        <!-- Botón 2: Lectura de consola -->
+        <button id="btnViewConsole" class="btn-selector" aria-label="Ver Consola" title="Lectura de Consola">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <polyline points="4 17 10 11 4 5"></polyline>
+            <line x1="12" y1="19" x2="20" y2="19"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- DISPLAY CENTRAL: Fondo blanco, letras negras, vacío al iniciar -->
+    <section class="display-screen" id="displayScreen">
+      <!-- Estado inicial vacío -->
+      <div id="viewEmpty" class="view-panel active"></div>
+
+      <!-- Vista 1: Gráficas en tiempo real con auto-rango -->
+      <div id="viewGraph" class="view-panel">
+        <div class="chart-box">
+          <div class="chart-header">
+            <span class="chart-label">Ángulo Pitch [°]: <strong id="valAng">0.00</strong></span>
+            <span class="chart-range" id="rangeAng"></span>
+          </div>
+          <canvas id="canvasAng"></canvas>
+        </div>
+
+        <div class="chart-box">
+          <div class="chart-header">
+            <span class="chart-label">Posición [cm]: <strong id="valPos">0.0</strong></span>
+            <span class="chart-range" id="rangePos"></span>
+          </div>
+          <canvas id="canvasPos"></canvas>
+        </div>
+
+        <div class="chart-box">
+          <div class="chart-header">
+            <span class="chart-label">Voltaje [V]: <strong id="valVolt">0.00</strong></span>
+            <span class="chart-range" id="rangeVolt"></span>
+          </div>
+          <canvas id="canvasVolt"></canvas>
+        </div>
+      </div>
+
+      <!-- Vista 2: Consola serial -->
+      <div id="viewConsole" class="view-panel">
+        <div id="consoleOutput" class="console-log"></div>
+      </div>
+    </section>
+
+    <!-- CONTROLES INFERIORES: STOP circular + RUN/ZERO + Cruceta triangular -->
+    <footer class="controls-area">
+      <button id="btnStop" class="btn-stop" data-cmd="STOP">STOP</button>
+
+      <div class="mid-actions">
+        <button id="btnRun" class="btn-mini btn-run" data-cmd="RUN" title="Reactivar equilibrio">RUN</button>
+        <button id="btnZero" class="btn-mini btn-zero" data-cmd="ZERO" title="Fijar origen (0 cm, 0°)">ZERO</button>
+      </div>
+
+      <div class="dpad">
+        <button class="btn-arrow up" data-cmd="FWD" aria-label="Avanzar">▲</button>
+        <button class="btn-arrow left" data-cmd="LEFT" aria-label="Izquierda">◄</button>
+        <button class="btn-arrow right" data-cmd="RIGHT" aria-label="Derecha">►</button>
+        <button class="btn-arrow down" data-cmd="BACK" aria-label="Retroceder">▼</button>
+      </div>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js').catch(console.error);
+    }
+  </script>
+</body>
+</html>
