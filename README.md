@@ -20,7 +20,8 @@ https://github.com/user-attachments/assets/8932e564-a278-4b37-9c8b-e6522c6622b3
 
 ### 3. Telemetría en Tiempo Real y Control desde la App Móvil BLE
 
-https://github.com/user-attachments/assets/8cc17a74-a7a3-4dd2-8584-7e1b181a4c2
+https://github.com/user-attachments/assets/43cb8650-3747-4ce4-876a-b35baa4220a8
+
 
 ---
 
