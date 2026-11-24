@@ -5,34 +5,14 @@ Este proyecto presenta una aplicación para controlar el robot y que haga más m
 
 **[Abrir Aplicación](https://dano-code-max.github.io/robot_balancin_unt/)**
 
+
 ---
 
-# Pruebas de Funcionamiento
+## 🎥 Pruebas de Funcionamiento
 
-### 1. Control en Cascada de Ángulo y Posición Lineal
-<video src="https://github.com/Dano-code-max/robot_balancin_unt/raw/main/media/ControlAnguloPosicion.mp4" controls width="360"><
-
-https://github.com/user-attachments/assets/e1386c6a-1f94-4eb2-ba12-7f9c7ea1d480
-
-/video>
-
-### 2. Control de Orientación y Rechazo de Perturbaciones (Yaw)
-<video src="https://github.com/Dano-code-max/robot_balancin_unt/raw/main/media/ControlYaw.mp4" controls width="360"></video>
-
-
-
-https://github.com/user-attachments/assets/8932e564-a278-4b37-9c8b-e6522c6622b3
-
-
-
-### 3. Telemetría en Tiempo Real y Control desde la App Móvil
-<video src="https://github.com/Dano-code-max/robot_balancin_unt/raw/main/media/FuncionamientoAplicacion.mp4" controls width="360"></video>
-
-
-
-https://github.com/user-attachments/assets/8cc17a74-a7a3-4dd2-8584-7e1b181a4c28
-
-
+| 1. Control en Cascada (Ángulo y Posición) | 2. Control de Orientación (Yaw) | 3. Telemetría y App Móvil BLE |
+| :---: | :---: | :---: |
+| <br>[https://github.com/user-attachments/assets/URL_VIDEO_1](https://github.com/user-attachments/assets/e1386c6a-1f94-4eb2-ba12-7f9c7ea1d480)<br> | <br>[https://github.com/user-attachments/assets/URL_VIDEO_2](https://github.com/user-attachments/assets/8932e564-a278-4b37-9c8b-e6522c6622b3)<br> | <br>[https://github.com/user-attachments/assets/URL_VIDEO_3](https://github.com/user-attachments/assets/8cc17a74-a7a3-4dd2-8584-7e1b181a4c28)<br> |
 
 ---
 
